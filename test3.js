@@ -8,7 +8,7 @@ var a=new Foo("wangxue");
 console.log(a);
 
 //作为对象属性执行
-var a={
+var obj={
     name:"A",
     printfName:function(){
         console.log(this.name)
