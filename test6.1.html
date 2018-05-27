@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1" class="class-div1">
+        <a id="link1" href="http://baidu.com">123</a>
+        <p id="p1">激活</p>
+        <p id="p2">取消</p>
+    </div>
+    <div id="div2">
+        <p id="p3">取消</p>
+        <p id="p4">取消</p>
+    </div>
+</body>
+    <script>
+        // var link1=document.getElementById('div1');
+        // link1.addEventListener('click',function(e){
+        //     e.preventDefault()
+        //     console.log(123);
+            
+        // })
+
+        //事件冒泡
+        function bindEvent(elem,type,fn){
+            elem.addEventListener(type,fn)
+        }
+        var p1=document.getElementById('p1');
+        bindEvent(p1,'click',function(e){
+            e.stopPropagation();
+            alert('激活');
+        })
+        var body=document.body;
+        bindEvent(body,'click',function(e){
+            alert('取消');
+        })
+    </script>
+</html>

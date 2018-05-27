@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1" class="class-div1">
+        <a id="link1" href="http://baidu.com">123</a>
+        <a id="link1" href="http://baidu.com">123</a>
+        <a id="link1" href="http://baidu.com">123</a>
+    </div>
+    <div id="div2">
+        <p id="p1">激活</p>
+        <p id="p1">取消</p>
+    </div>
+</body>
+<script> 
+    // function bindEvent(elem,type,fn){
+    //     elem.addEventListener(type,fn)
+    // }
+    // var div1=document.getElementById('div1');
+    // bindEvent(div1,'click',function(e){
+    //     e.preventDefault();
+    //     var target =e.target;
+    //     if(target.nodeName=== 'A'){
+    //         console.log('clickedx');
+    //     }
+
+    // })
+
+    //实现代理
+    function bindEvent(elem, type, selector, fn) {
+        if (fn == null) {
+            fn = selector;
+            selector = null;
+        }
+        elem.addEventListener(type, function (e) {
+            if (selector) {
+                //代理
+                target=e.target;
+                if(target.matches(selector)){
+                    fn.call(target,e)
+                }
+            } else {
+                //不是代理
+                fn(e)
+            }
+        })
+    }
+    
+    var div1=document.getElementById('div1');
+    bindEvent(div1, 'click', 'a', function (e) {
+        e.preventDefault();
+        
+        console.log(this.innerHTML);
+        
+    })
+    var p1=document.getElementById('p1');
+    bindEvent(p1, 'click', function (e) {
+        console.log(p1.innerHTML);
+        
+    })
+</script>
+
+</html>
