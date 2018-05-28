@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>table布局</title>
+    <style>
+        .layout .conment{
+            width: 100%;
+            display: table;
+            height: 100px;
+        }
+        .conment>div{
+            display: table-cell;
+        }
+        .left{
+            width: 300px;
+            background-color: red;
+        } 
+        .center{
+            background-color: yellow;
+        }
+        .right{
+            width: 300px;
+            background-color: blue;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <section class="layout table">
+        <div class="conment">
+            <div class="left"></div>
+            <div class="center">
+                <h1>1.这是table布局的中间部分</h1>
+            </div>
+            <div class="right"></div>
+        </div>
+    </section>
+</body>
+
+</html>

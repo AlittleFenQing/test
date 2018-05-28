@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid布局</title>
+    <style>
+        .conment{
+            display: grid;
+            width: 100%;
+            grid-template-rows: 100px;
+            grid-template-columns: 300px auto 300px;
+        }
+        .left{
+            background-color: red;
+        }
+        .center{
+            background-color: yellow;
+        }
+        .right{
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="layout grid">
+        <div class="conment">
+            <div class="left"></div>
+            <div class="center">
+                    <h1>1.这是grid布局的中间部分</h1>
+                </div>
+            <div class="right"></div>
+            
+        </div>
+    </section>
+</body>
+
+</html>

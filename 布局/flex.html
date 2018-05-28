@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex布局</title>
+    <style>
+        html *{
+            margin: 0;
+            padding: 0;
+        }
+        .conment{
+            display: flex;
+            height: 200px;
+        }
+        .left{
+            width: 300px;
+            background-color: red;
+        }
+        .center{
+            flex: 1;
+            background-color: yellow;
+        }
+        .right{
+            width: 300px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="layout float">
+        <div class="conment">
+            <div class="left"></div>
+            <div class="center">
+                <h1>1.这是flex布局的中间部分</h1>
+            </div>
+            <div class="right"></div>
+        </div>
+    </section>
+</body>
+
+</html>
